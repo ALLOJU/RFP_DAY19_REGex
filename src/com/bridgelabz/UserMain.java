@@ -50,6 +50,15 @@ public class UserMain {
 		return ur.emaiIdofUser(email);
 		
 	}
+	/**
+	 * 6.used to call method which perform validations on Mobile Number
+	 */
+	public boolean userPhoneNo() {
+		
+		System.out.println("Enter User Phone Number");
+		String phone=sc.next();
+		return ur.mobileNumberOfUser(phone);
+	}
 
 
 	/**
@@ -61,6 +70,7 @@ public class UserMain {
 		  user.userFirstName();
 		  user.userLastName();
 		  user.userEmail();
+		  user.userPhoneNo();
 		
 		
 	}
