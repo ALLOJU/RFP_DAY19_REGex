@@ -9,6 +9,7 @@ public class UserMain {
 	 *  2.Creating UserRegistration Object to call its methods and setting values
 	 *  3.used to call method which perform validations on first name 
 	 *  4.used to call method which perform validations on last name
+	 *  5.used to call method which perform validations on Email ID 
 	 */
 	
 	/**
@@ -27,8 +28,10 @@ public class UserMain {
 		System.out.println("Enter first name");
 		String firstName=sc.next();
 		return ur.firstNameofUser(firstName);
+	
 		
 	}
+	
 	/**
 	 * 4.used to call method which perform validations on last name 
 	 */
@@ -38,10 +41,31 @@ public class UserMain {
 		return ur.lastNameofUser(lastName);
 		
 	}
+	/**
+	 * 5.used to call method which perform validations on Email ID 
+	 */
+	public boolean userEmail() {
+		System.out.println("Enter User Email ID");
+		String email=sc.next();
+		return ur.emaiIdofUser(email);
+		
+	}
+
+
+	/**
+	 * Main method to perform all Validations on User input 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		UserMain user=new UserMain();
-		user.userFirstName();
-		user.userLastName();
+		  user.userFirstName();
+		  user.userLastName();
+		  user.userEmail();
+		
+		
 	}
+
+
+	
 	
 }
