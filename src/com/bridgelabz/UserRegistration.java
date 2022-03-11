@@ -132,14 +132,14 @@ public class UserRegistration {
 	 * Method used to perform password  validations using regular expression
 	 * As a User need to follow pre-defined Password rules.
 	 * Rule 1 : Minimum 8 characters
+	 * Rule 2 : Should have at least 1 Upper Case
+	 * Rule 3 : Should have at least 1 numeric number in the password
+	 * Rule 4 : Has exactly 1 Special Character
 	 * @param password - input password given by the user
 	 * @return - it returns true or false based on the given regular expression
 	 */
 	public boolean passwordOfUser(String password) {
-		regex="^(?=.*[0-9])"
-                + "(?=.*[a-z])(?=.*[A-Z])"
-                + "(?=.*[@#$%^&+=]){1}"
-                + "(?=\\S+$).{8,20}$";
+		regex="^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]*[\\@\\#\\^][a-zA-Z0-9]*$";
 		Pattern p=Pattern.compile(regex);
 		Matcher m=p.matcher(password);
 		System.out.println(m.matches());
