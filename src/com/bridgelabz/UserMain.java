@@ -60,18 +60,26 @@ public class UserMain {
 		return ur.mobileNumberOfUser(phone);
 	}
 
-
+	/**
+	 * 7.used to call method which perform validations on Password
+	 */
+	private boolean userPassword() {
+		System.out.println("Enter User Password");
+		String password=sc.next();
+		return ur.passwordOfUser(password);
+		
+	}
 	/**
 	 * Main method to perform all Validations on User input 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		UserMain user=new UserMain();
-		  user.userFirstName();
-		  user.userLastName();
-		  user.userEmail();
-		  user.userPhoneNo();
-		
+		  //user.userFirstName();
+		  //user.userLastName();
+		  //user.userEmail();
+		  //user.userPhoneNo();
+		  user.userPassword();
 		
 	}
 

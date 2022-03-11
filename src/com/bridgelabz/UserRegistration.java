@@ -128,5 +128,30 @@ public class UserRegistration {
 		}
 		return m.matches();
 	}
+	/**
+	 * Method used to perform password  validations using regular expression
+	 * As a User need to follow pre-defined Password rules.
+	 * Rule 1 : Minimum 8 characters
+	 * @param password - input password given by the user
+	 * @return - it returns true or false based on the given regular expression
+	 */
+	public boolean passwordOfUser(String password) {
+		regex="^(?=.*[0-9])"
+                + "(?=.*[a-z])(?=.*[A-Z])"
+                + "(?=.*[@#$%^&+=]){1}"
+                + "(?=\\S+$).{8,20}$";
+		Pattern p=Pattern.compile(regex);
+		Matcher m=p.matcher(password);
+		System.out.println(m.matches());
+		if(m.matches()) {
+			System.out.println("Password is Valid");
+		}
+		else {
+			System.out.println(" Password is Not Valid");
+
+		}
+		return m.matches();
+	}
+	
 	
 }
