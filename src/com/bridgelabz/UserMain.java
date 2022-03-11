@@ -1,5 +1,8 @@
 package com.bridgelabz;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class UserMain {
@@ -44,19 +47,25 @@ public class UserMain {
 	/**
 	 * 5.used to call method which perform validations on Email ID 
 	 */
-	public boolean userEmail() {
-		System.out.println("Enter User Email ID");
-		String email=sc.next();
-		return ur.emaiIdofUser(email);
+	public void userEmail() {
+		/*
+		 * System.out.println("Enter User Email ID"); String email=sc.next(); return
+		 * ur.emaiIdofUser(email);
+		 */
+		SampleEmails emails=new SampleEmails();
+		emails.TestForValidEmails();
+		emails.TestForInValidEmails();
 		
 	}
 	/**
 	 * 6.used to call method which perform validations on Mobile Number
+	 * @throws IOException 
 	 */
-	public boolean userPhoneNo() {
+	public boolean userPhoneNo() throws IOException {
 		
 		System.out.println("Enter User Phone Number");
-		String phone=sc.next();
+		BufferedReader reader =new BufferedReader(new InputStreamReader(System.in));
+		String phone=reader.readLine();
 		return ur.mobileNumberOfUser(phone);
 	}
 
@@ -72,14 +81,15 @@ public class UserMain {
 	/**
 	 * Main method to perform all Validations on User input 
 	 * @param args
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		UserMain user=new UserMain();
 		  //user.userFirstName();
 		  //user.userLastName();
-		  //user.userEmail();
+		  user.userEmail();
 		  //user.userPhoneNo();
-		  user.userPassword();
+		  //user.userPassword();
 		
 	}
 

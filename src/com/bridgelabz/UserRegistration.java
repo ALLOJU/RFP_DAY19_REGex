@@ -89,7 +89,10 @@ public class UserRegistration {
 	 * @return - returns true or false based on the condition
 	 */
 	public boolean emaiIdofUser(String email) {
-		regex="[a-zA-Z0-9][a-zA-Z0-9_.]*@[a-zA-Z0-9]+([.][a-z]+)+";
+		regex="^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
 		Pattern p=Pattern.compile(regex);
 		if (email == null) {
 			return false;
@@ -115,7 +118,9 @@ public class UserRegistration {
 	 * @return - it returns true or false based on the given regular expression
 	 */
 	public boolean mobileNumberOfUser(String phone) {
-		regex="^(\\d{1,3}[- ]?){1}\\d{9,10}$";
+		
+		regex="^([0-9]{2}[\\s]){1}[0-9]{9,10}$";
+		
 		Pattern p=Pattern.compile(regex);
 		Matcher m=p.matcher(phone);
 		System.out.println(m.matches());
